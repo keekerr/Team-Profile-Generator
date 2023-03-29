@@ -1,18 +1,64 @@
+# Teammate Profile Generator
 
-<!-- GIVEN a command-line application that accepts user input
-WHEN I am prompted for my team members and their information
-THEN an HTML file is generated that displays a nicely formatted team roster based on user input
-WHEN I click on an email address in the HTML
-THEN my default email program opens and populates the TO field of the email with the address
-WHEN I click on the GitHub username
-THEN that GitHub profile opens in a new tab
-WHEN I start the application
-THEN I am prompted to enter the team manager’s name, employee ID, email address, and office number
-WHEN I enter the team manager’s name, employee ID, email address, and office number
-THEN I am presented with a menu with the option to add an engineer or an intern or to finish building my team
-WHEN I select the engineer option
-THEN I am prompted to enter the engineer’s name, ID, email, and GitHub username, and I am taken back to the menu
-WHEN I select the intern option
-THEN I am prompted to enter the intern’s name, ID, email, and school, and I am taken back to the menu
-WHEN I decide to finish building my team
-THEN I exit the application, and the HTML is generated -->
+## Table of Contents
+
+* [Description](#description)
+* [Code Examples](#code-examples)
+* [Important links](#important-links)
+* [Questions](#questions)
+
+## Description
+
+The purpose of this project was to create an Employee Profile generator that can be used to enter/store employee data including name, office number, contact information and personnel number.
+
+
+## Code Examples
+Example of Code used to create prompts:
+
+```js
+return inquirer
+        .prompt([
+        {
+            type: 'list',
+            name: 'role',
+            message:"What is the employee's role?",
+            choices: ['Manager', 'Engineer', 'Intern']
+        },
+        {
+            type:'text',
+            name: 'employee',
+            message: "What is the Employee's name?"
+        },
+        {
+            type:'text',
+            name: 'id',
+            message: "What is the employee's ID number?"
+        },
+        {
+            type: 'text',
+            name: 'email',
+            message: "What is the employee's email?"
+        }])
+```
+Example of Code used to create tests.
+
+```js
+test ('creates an intern object', () => {
+    const intern = new Intern('Jose Sanchez', '0000', 'test@gmail.com', 'College');
+    expect(intern.name).toBe('Jose Sanchez');
+    expect(intern.id).toBe('0000');
+    expect(intern.email).toBe('test@gmail.com');
+    expect(intern.school).toBe('College');
+});
+```
+
+## Important Links
+[GitHub Repository](https://github.com/keekerr/Team-Profile-Generator)
+
+[Video Walk Through of Application](https://drive.google.com/file/d/1xZRh37fxNXvQjTyHujb9Fs3ckZNhzoRS/view)
+
+## Questions
+
+If you have any questions regarding this project, please feel free to contact me at this email: keeley.s.sprouse@gmail.com
+
+Other examples of projects I have worked on can be viewed on Github via this link: [keekerr](https://github.com/keekerr)
